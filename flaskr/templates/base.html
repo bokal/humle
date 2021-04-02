@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com"/>
+      <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"/> 
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet" /> 
+      <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet"> 
+      <title>{% block title %}{% endblock %}Humle</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='zen.css') }}" type="text/css" />
+    </head>
+  <body>
+    <div class="head">
+      <h1>Humle</h1>
+    </div>
+    <nav>
+      <div id="menu">
+        <ul>
+            {{ insert_snippet('Menu') |safe }}
+            {% if g.user['id'] %}
+            <li><a href="/create">New</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <section id="content" class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+     <footer class="center">
+       <hr/>
+      {{ insert_snippet('Footer') | safe}}
+    </footer>
+    
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="center">{% block title %}{% endblock %}Artikel arkiv</h1>
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+        <div class="center">
+          {{ post['created'].strftime('%d/%m-%Y') }}: 
+          <a href="/post?id={{  post['id']}}">{{ post['title'] }}</a>
+        </div>
+    {% if not loop.last %}
+    {% else %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

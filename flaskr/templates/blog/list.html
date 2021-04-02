@@ -1,0 +1,25 @@
+{% extends 'admin.html' %}
+
+{% block header %}
+  <h1>{% block title %}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+      <article class="right">
+      <header>
+        <div>
+          <p>Type: {{ post['typ'] }}</p>
+          <h2>{{ post['title'] }}</h2>
+          <h3>{{ post['created'].strftime('%d/%m-%Y') }}</h3>
+        </div>
+      </header>
+      {% if g.user['id'] == post['author_id'] %}
+        <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+      {% endif %}
+    </article>
+    {% if not loop.last %}
+    {% else %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

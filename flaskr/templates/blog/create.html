@@ -1,0 +1,23 @@
+{% extends 'admin.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required/>
+    <label for="img">Image</label>
+    <input name="img" id="img" value="{{ request.form['img'] }}"/>
+    <label for="type">Type</label>
+    <select name="type" id="type" value="{{ request.form['type'] }}">
+      <option value="post">post</option>
+      <option value="page">page</option>
+      <option value="snippet">snippet</option>
+    </select>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <input type="submit" value="Save"/>
+  </form>
+{% endblock %}

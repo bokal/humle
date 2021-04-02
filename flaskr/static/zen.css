@@ -1,0 +1,104 @@
+body {
+    /*background-color: rgb(253, 249, 243);*/
+    color: rgb(75,74,72);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 120%;
+    min-height: 100%;
+}
+.center {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.head {
+    background-color:#25384a;
+    color:#ffffff;
+    /*text-align: center;*/
+    padding:2em;
+    margin:-1em;
+}
+.content img{
+    max-width: 100%;
+    max-height: auto;
+}
+h1 {
+    margin-left: 9%;
+    padding:0;
+    font-weight: bold;
+}
+ul.box {
+    margin:0;
+    padding: 0;
+}
+li.box{
+    margin-left: 0;
+    margin-top: 1em;
+    padding:1em;
+    display: inline-block;
+    max-width: 45%;
+    border: 1px solid rgb(75,74,72);
+}
+article {
+    float:inline-end;
+    padding-bottom: 5em;
+    font-family: 'Titillium Web', sans-serif;
+}
+#menu ul{
+    list-style-type: none;
+    text-align: right;
+    margin-top:-4em;
+    margin-right: 5%;
+    padding-bottom: 2em;
+}
+#menu li {
+    display: inline;
+    font-weight: bold;
+    padding-right: 1em;
+}
+#menu a:link, #menu a:visited, #menu a:hover, #menu a:active {
+    color:#ffffff;
+    text-decoration: none;
+}
+#menu a:hover {
+    text-decoration: underline;
+}
+#body h2 {
+    padding-top: 1em;
+    font-family: 'Playfair Display', serif;
+}
+#footer{
+    position: relative;
+    margin-top: -180px;
+    /* negative value of footer height */
+    height: 180px;
+    clear: both;
+
+}
+#content {
+    overflow: auto;
+    padding-bottom: 180px;
+    min-height: 100% !important;
+}
+.adjust-center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adjust-left {
+    text-align: left;
+    float:left;
+    padding-right: 1em;
+}
+.adjust-right {
+    float: right;
+    text-align: right;
+    padding-left: 1em;
+    /*display: block;
+    margin-left: 65%;
+    margin-right: auto;
+    */
+}
+img.adjust-center, img.adjust-left, img.adjust-right {
+    width: 30%;
+}

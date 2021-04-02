@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+      <article class="center">
+      <header>
+        <div>
+          <h2>{{ post['title'] }}</h2>
+          <h3>{{ post['created'].strftime('%d/%m-%Y') }}</h3>
+        </div>
+      </header>
+      {% if g.user['id'] == post['author_id'] %}
+        <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+      {% endif %}
+      {% if post['img'] %}
+        <img src="/static/img/{{ post['img'] }}"/>
+      {% endif %}
+      <p class="body">{{ post['body']|safe }}</p>
+    </article>
+{% endblock %}
